@@ -1,6 +1,24 @@
 # ScoreboardLib
 A flicker-free scoreboard library with support of text up to 48 characters.
 
+TigerHix's original repo has been down for a long time. This is a version maintained for the arim repository.
+The dependency versioning is now:
+```xml
+<dependency>
+	<groupId>me.tigerhix.lib</groupId>
+	<artifactId>scoreboard</artifactId>
+	<version>arim-1.0.2</version>
+</dependency>
+```
+
+The maven repo is now:
+```xml
+<repository>
+	<id>arim-repo</id>
+	<url>
+</repository>
+```
+
 What is ScoreboardLib?
 --------------
 ScoreboardLib is a flexiable library for adding pretty, animated scoreboards to your plugin without requiring you to figure out how to get rid of random flickers or limitations. This library is introduced to dealt with following problems in the original API and similar libraries:
@@ -27,14 +45,14 @@ How do I add it to my project?
 Simply add the following to your `pom.xml`.
 
     <repository>
-      <id>tiger-repo</id>
-      <url>http://repo.tigerhix.me/content/repositories/snapshots/</url>
+      <id>arim-repo</id>
+      <url>https://dl.cloudsmith.io/public/anand-beh/arim-repo/maven/</url>
     </repository>
 
     <dependency>
       <groupId>me.tigerhix.lib</groupId>
       <artifactId>scoreboard</artifactId>
-      <version>1.0.1-SNAPSHOT</version>
+      <version>arim-1.0.2</version>
     </dependency>
 
 Now you are able to create your own pretty scoreboards.
