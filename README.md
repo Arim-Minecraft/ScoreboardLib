@@ -15,7 +15,7 @@ The maven repo is now:
 ```xml
 <repository>
 	<id>arim-repo</id>
-	<url>
+	<url>https://dl.cloudsmith.io/public/anand-beh/arim-repo/maven/</url>
 </repository>
 ```
 
