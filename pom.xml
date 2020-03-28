@@ -5,11 +5,20 @@
 
     <groupId>me.tigerhix.lib</groupId>
     <artifactId>scoreboard</artifactId>
-    <version>arim-1.0.2</version>
+    <version>arim-1.0.3</version>
 	
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
+	
+	<licenses>
+		<license>
+			<name>GNU General Public License, Version 3</name>
+			<url>https://www.gnu.org/licenses/</url>
+			<distribution>repo</distribution>
+			<comments>Strong copyleft license, commonly known as the GNU GPL v3</comments>
+		</license>
+	</licenses>
 	
 	<distributionManagement>
 		<repository>
