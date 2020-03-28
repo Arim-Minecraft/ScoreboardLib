@@ -239,11 +239,13 @@ public class SimpleScoreboard implements Scoreboard {
             this.team = team;
         }
 
-        public int getOffset() {
+        @SuppressWarnings("unused")
+		public int getOffset() {
             return offset;
         }
 
-        public String getFullName() {
+        @SuppressWarnings("unused")
+		public String getFullName() {
             if (team == null) return name;
             if (team.getSuffix() == null) return team.getPrefix() + name;
             return team.getPrefix() + name + team.getSuffix();
@@ -269,7 +271,7 @@ public class SimpleScoreboard implements Scoreboard {
             return false;
         }
 
-        @Override
+		@Override
         public void setBanned(boolean banned) {
         }
 
