@@ -9,7 +9,7 @@ import org.bukkit.ChatColor;
 import org.bukkit.Location;
 import org.bukkit.OfflinePlayer;
 import org.bukkit.entity.Player;
-import org.bukkit.scheduler.BukkitRunnable;
+import org.bukkit.scheduler.BukkitTask;
 import org.bukkit.scoreboard.DisplaySlot;
 import org.bukkit.scoreboard.Objective;
 import org.bukkit.scoreboard.Team;
@@ -36,7 +36,7 @@ public class SimpleScoreboard implements Scoreboard {
     private Map<FakePlayer, Integer> entryCache = new ConcurrentHashMap<>();
     private Table<String, Integer, FakePlayer> playerCache = HashBasedTable.create();
     private Table<Team, String, String> teamCache = HashBasedTable.create();
-    private BukkitRunnable updateTask;
+    private BukkitTask updateTask;
 
     public SimpleScoreboard(Player holder) {
         this.holder = holder;
@@ -54,13 +54,7 @@ public class SimpleScoreboard implements Scoreboard {
         // Set to the custom scoreboard
         holder.setScoreboard(scoreboard);
         // And start updating on a desired interval
-        updateTask = new BukkitRunnable() {
-            @Override
-            public void run() {
-                update();
-            }
-        };
-        updateTask.runTaskTimer(ScoreboardLib.getPluginInstance(), 0, updateInterval);
+        updateTask = Bukkit.getServer().getScheduler().runTaskTimer(ScoreboardLib.getPluginInstance(), this::update, 0, updateInterval);
     }
 
     @Override
